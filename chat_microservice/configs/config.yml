@@ -1,0 +1,9 @@
+port: "8083"
+
+db:
+  host: "localhost"
+  port: "5433"
+  username: "postgres"
+  dbname: "chat_microservice"
+  password: "12345"
+  sslmode: "disable"

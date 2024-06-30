@@ -1,0 +1,9 @@
+port: "8085"
+
+db:
+  host: "localhost"
+  port: "5433"
+  username: "postgres"
+  dbname: "message_microservice"
+  password: "12345"
+  sslmode: "disable"

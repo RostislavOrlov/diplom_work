@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: auth_microservice
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/auth/signup/**
+        - id: auth_microservice
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/auth/signin/**
+        - id: videoconference_microservice
+          uri: http://localhost:8000
+          predicates:
+            - Path=/offer/**
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins:
+            - "http://localhost:8080"
+            allowed-methods: "GET, POST, PUT, PATCH, DELETE"
+            allowed-headers: "Authorization, Content-Type"
